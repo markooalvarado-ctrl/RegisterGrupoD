@@ -1,0 +1,16 @@
+<%- include('partials/head', { title: 'Dashboard - AuthSRS', user }) %>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body p-4">
+    <h1 class="h4 fw-bold mb-2">Bienvenido, <%= user.full_name %> 👋</h1>
+    <p class="text-secondary mb-0">
+      Sesión activa con <span class="fw-semibold"><%= user.email %></span>.
+    </p>
+  </div>
+</div>
+
+<div class="alert alert-info mt-3">
+  Tip: Podés proteger otras rutas usando el middleware <code>requireAuth</code>.
+</div>
+
+<%- include('partials/foot') %>

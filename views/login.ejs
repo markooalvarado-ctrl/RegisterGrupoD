@@ -1,0 +1,32 @@
+<%- include('partials/head', { title: 'Login - AuthSRS', user: null }) %>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body p-4">
+    <h1 class="h4 fw-bold mb-1">Iniciar sesión</h1>
+    <p class="text-secondary mb-4">Accedé con tu correo y contraseña.</p>
+
+    <% if (error) { %>
+      <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+
+    <form method="post" action="/login" novalidate>
+      <div class="mb-3">
+        <label class="form-label">Correo</label>
+        <input class="form-control" type="email" name="email" value="<%= values.email %>" placeholder="correo@ejemplo.com" required />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input class="form-control" type="password" name="password" placeholder="********" required />
+      </div>
+
+      <button class="btn btn-primary w-100">Entrar</button>
+    </form>
+
+    <div class="mt-3 text-center">
+      <a href="/register">Crear cuenta</a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/foot') %>
