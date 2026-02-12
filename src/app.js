@@ -41,7 +41,7 @@ app.get("/dashboard", requireAuth, (req, res) => {
   res.render("dashboard", { user: req.session.user });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`✅ App corriendo en http://localhost:${PORT}`);
